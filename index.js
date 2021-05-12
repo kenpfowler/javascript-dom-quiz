@@ -52,6 +52,37 @@ var user2 = {
 };
 
 window.addEventListener("load", function () {
+  //render tweets for each element in tweets array.
+  (function renderTweets() {
+    const tweetContainer = document.querySelector(".tweet-container");
+    for (const tweet of user2.tweets) {
+      const newTweet = document.createElement("div");
+      newTweet.className = "tweet";
+      newTweet.innerHTML = `
+            <div class="tweet-main">
+              <img class="tweet-avatar" src="${user2.avatarURL}" />
+              <div class="tweet-body">
+                <div class="tweet-header">
+                  <span class="display-name">${user2.displayName}</span>
+                  <small id="username">${user2.userName}</small>
+                  <small id="timestamp">${tweet.timestamp.split(" ")[0]}</small>
+                </div>
+                <div class="tweet-content">
+                  <p>${tweet.text}</p>
+                </div>
+                <div class="tweet-footer">
+                  <small id="reply-footer">5.2K</small>
+                  <small id="retweet-footer">7.7K</small>
+                  <small id="like-footer">65k</small>
+                  <small id="download-footer">boxthing</small>
+                </div>
+              </div>
+            </div>
+        `;
+      tweetContainer.appendChild(newTweet);
+    }
+  })();
+
   //render display names
   const displayName = document.querySelectorAll(".display-name");
   for (const name of displayName) {
@@ -86,31 +117,4 @@ window.addEventListener("load", function () {
   document.querySelector("#following").textContent = user2.followingCount;
   //render follower count
   document.querySelector("#followers").textContent = user2.followerCount;
-
-  //render tweets
-  // const createTweet = () => {
-  //   <div class="tweet-container">
-  //     <div class="tweet">
-  //       <div class="tweet-main">
-  //         <img class="tweet-avatar" src="./assets/elonmusk.jpg" />
-  //         <div class="tweet-body">
-  //           <div class="tweet-header">
-  //             <span class="display-name"></span>
-  //             <small id="username"></small>
-  //             <small id="timestamp"></small>
-  //           </div>
-  //           <div class="tweet-content">
-  //             <p>This is some demo content</p>
-  //           </div>
-  //           <div class="tweet-footer">
-  //             <small id="reply-footer">5.2K</small>
-  //             <small id="retweet-footer">7.7K</small>
-  //             <small id="like-footer">65k</small>
-  //             <small id="download-footer">boxthing</small>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </div>;
-  // };
 });
