@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --twitterBlue: rgba(29, 161, 242, 1);
+  --twitterSubtitle: #5b7083;
+  --twitterAccent: #1da1f2;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.container {
+  width: 100vw;
+  max-width: 500px;
+  background-color: white;
+  border: solid 2px #f1f1f1;
+}
+
+.header {
+  width: 100%;
+  height: 53px;
+  background-color: white;
+  display: flex;
+  gap: 10px;
+}
+
+.banner {
+  width: 100%;
+  height: 125px;
+  background-image: url(./assets/elonmusk-cover.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bio-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+}
+.bio {
+  padding-left: 10px;
+}
+.profile-img {
+  border-radius: 50%;
+  border: 3px solid white;
+  width: 100px;
+  position: absolute;
+  bottom: 15px;
+  left: 25px;
+}
+.notifications {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.btn {
+  width: 100px;
+  background-color: var(--twitterBlue);
+  height: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+}
+.tabs {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: #5b7083;
+}
+ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  text-align: center;
+  align-items: center;
+}
+
+small {
+  color: var(--twitterSubtitle);
+}
+
+li {
+  flex: 1 1 0;
+}
+#tweet-replies-tab {
+  flex: 2.5;
+}
+.tweet-container {
+  width: 100%;
+  border: solid 1px #f1f1f1;
+  border-left: 0;
+  border-right: 0;
+}
+
+.tweet-container:hover {
+  background-color: #f1f1f1;
+}
+.tweet {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-main > img {
+  border-radius: 50%;
+  width: 100px;
+  max-height: 100px;
+}
+.tweet-main {
+  display: flex;
+  gap: 10px;
+}
+.tweet-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.tweet-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tweet-content {
+  width: 100%;
+}
+
+.tweet-footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.display-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.display-name::after {
+  content: " ✔";
+  color: var(--twitterBlue);
+}
+#join-date {
+  color: var(--twitterSubtitle);
+}
+
+#join-date::before {
+  content: "📅 ";
+}
+
+#following {
+  color: black;
+  font-weight: bold;
+}
+
+#followers {
+  color: black;
+  font-weight: bold;
+}
+
+#tweet-count {
+  color: #5b7083;
+}
+
+#tweet-tab:hover {
+  color: var(--twitterAccent);
+  border-bottom: solid 2px var(--twitterAccent);
+  box-sizing: content-box;
+}
+#tweet-replies-tab:hover {
+  color: var(--twitterAccent);
+  border-bottom: solid 2px var(--twitterAccent);
+  box-sizing: content-box;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
+#arrow {
+  color: var(--twitterBlue);
+  text-decoration: none;
+}
+
+#username {
+  color: var(--twitterSubtitle);
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 599px) {
+  .container {
+    width: 600px;
+    margin: 0 auto;
+    height: none;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User / Twitter</title>
+    <link rel="stylesheet" href="/style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="arrow">
+          <a href="#" id="arrow">🡨</a>
+        </div>
+        <div class="user-tag">
+          <span class="display-name"></span><br /><small id="tweet-count"
+            >13.6k</small
+          >
+        </div>
+      </div>
+      <div class="banner"></div>
+      <div class="bio-container">
+        <div class="notifications">
+          <div class="btn"><span>Follow</span></div>
+        </div>
+        <img src="" class="profile-img" alt="elon-profile" />
+      </div>
+      <div class="bio">
+        <div class="user-tag">
+          <span class="display-name"></span><br /><small id="username"></small>
+        </div>
+        <small id="join-date"></small>
+        <br />
+        <small><span id="following"></span>Following</small
+        ><small><span id="followers"></span>Followers</small>
+      </div>
+      <div class="tabs">
+        <ul>
+          <li id="tweet-tab">Tweets</li>
+          <li id="tweet-replies-tab">Tweets & replies</li>
+          <li id="tweet-tab">Media</li>
+          <li id="tweet-tab">Likes</li>
+        </ul>
+      </div>
+      <div class="tweet-container">
+        <div class="tweet">
+          <div class="tweet-main">
+            <img class="tweet-avatar" src="./assets/elonmusk.jpg" />
+            <div class="tweet-body">
+              <div class="tweet-header">
+                <span class="display-name"></span><small id="username"></small>
+                <small id="timestamp"></small>
+              </div>
+              <div class="tweet-content">
+                <p>This is some demo content</p>
+              </div>
+              <div class="tweet-footer">
+                <small id="reply-footer">5.2K</small
+                ><small id="retweet-footer">7.7K</small
+                ><small id="like-footer">65k</small
+                ><small id="download-footer">boxthing</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="/index.js"></script>
+    </div>
+  </body>
+</html>
