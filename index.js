@@ -1,5 +1,16 @@
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get("user");
+const index = parseInt(myParam.split("user")[1]) - 1;
+
+const twitterNumberFormat = (num) => {
+  if (num >= 1000 && num < 10000000) {
+    return (num /= 10000).toString() + "K";
+  } else if (num >= 1000000) {
+    return (num /= 1000000).toString() + "M";
+  } else {
+    return num;
+  }
+};
 
 const users = [
   {
@@ -55,7 +66,7 @@ const users = [
     ],
   },
 ];
-const index = parseInt(myParam.split("user")[1]) - 1;
+console.log(twitterNumberFormat(users[1].tweetCount));
 
 window.addEventListener("load", function () {
   //loop over user array and find user with same number -1 (index)
@@ -107,9 +118,9 @@ window.addEventListener("load", function () {
   ).style.backgroundImage = `url(${users[index].coverPhotoURL})`;
 
   //render tweet count
-  document.querySelector(
-    "#tweet-count"
-  ).textContent = `${users[index].tweetCount} Tweets`;
+  document.querySelector("#tweet-count").textContent = `${twitterNumberFormat(
+    users[index].tweetCount
+  )} Tweets`;
 
   //render profile image
   document.querySelector(".profile-img").src = users[index].avatarURL;
@@ -127,8 +138,11 @@ window.addEventListener("load", function () {
   //render join date
   document.querySelector("#join-date").textContent = users[index].joinedDate;
   //render following count
-  document.querySelector("#following").textContent =
-    users[index].followingCount;
+  document.querySelector("#following").textContent = twitterNumberFormat(
+    users[index].followingCount
+  );
   //render follower count
-  document.querySelector("#followers").textContent = users[index].followerCount;
+  document.querySelector("#followers").textContent = twitterNumberFormat(
+    users[index].followerCount
+  );
 });
