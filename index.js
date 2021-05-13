@@ -52,6 +52,9 @@ var user2 = {
 };
 
 window.addEventListener("load", function () {
+  //detect which profile is being queried and render based on that
+  // currently hard coded with user2 data, but needs to be dynamic
+
   //render tweets for each element in tweets array.
   (function renderTweets() {
     const tweetContainer = document.querySelector(".tweet-container");
@@ -63,7 +66,7 @@ window.addEventListener("load", function () {
               <img class="tweet-avatar" src="${user2.avatarURL}" />
               <div class="tweet-body">
                 <div class="tweet-header">
-                  <span class="display-name">${user2.displayName}</span>
+                  <span class="display-name sml">${user2.displayName}</span>
                   <small id="username">${user2.userName}</small>
                   <small id="timestamp">${tweet.timestamp.split(" ")[0]}</small>
                 </div>
@@ -71,10 +74,12 @@ window.addEventListener("load", function () {
                   <p>${tweet.text}</p>
                 </div>
                 <div class="tweet-footer">
-                  <small id="reply-footer">5.2K</small>
-                  <small id="retweet-footer">7.7K</small>
-                  <small id="like-footer">65k</small>
-                  <small id="download-footer">boxthing</small>
+                  <small id="reply-footer">🗨️</small>
+                  <small id="retweet-footer"><i class="fa fa-retweet"></i>
+
+                  </small>
+                  <small id="like-footer"><i class="fa fa-heart"></i></small>
+                  <small id="download-footer"><i class="fa fa-upload"></i></small>
                 </div>
               </div>
             </div>
