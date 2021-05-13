@@ -4,7 +4,7 @@ const index = parseInt(myParam.split("user")[1]) - 1;
 
 const twitterNumberFormat = (num) => {
   if (num >= 1000 && num < 10000000) {
-    return (num /= 10000).toString() + "K";
+    return (num /= 1000).toString() + "K";
   } else if (num >= 1000000) {
     return (num /= 1000000).toString() + "M";
   } else {
@@ -95,7 +95,7 @@ window.addEventListener("load", function () {
                 <div class="tweet-footer">
                   <small id="reply-footer">🗨️</small>
                   <small id="retweet-footer"><i class="fa fa-retweet"></i>
-
+                    
                   </small>
                   <small id="like-footer"><i class="fa fa-heart"></i></small>
                   <small id="download-footer"><i class="fa fa-upload"></i></small>
